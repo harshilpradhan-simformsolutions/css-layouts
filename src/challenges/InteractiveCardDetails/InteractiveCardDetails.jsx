@@ -70,7 +70,7 @@ const InteractiveCardDetails = () => {
           <span className="relative top-[4.7rem] left-[20.5rem]">{cvv}</span>
         </div>
       </div>
-      <div className="w-[500px] m-1 p-8">
+      <form className="w-[500px] m-1 p-8">
         <Input
           placeholder="Jane Appleseed"
           label="Cardholder Name"
@@ -129,7 +129,7 @@ const InteractiveCardDetails = () => {
               const value = e.target.value;
               if (value.length > 3) return;
 
-              setState({ cvc: value });
+              setState({ cvv: value });
             }}
           />
         </div>
@@ -141,7 +141,7 @@ const InteractiveCardDetails = () => {
             Confirm
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

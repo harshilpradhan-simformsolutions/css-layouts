@@ -21,7 +21,7 @@ const Card = ({
       }`}
     >
       <Wrapper {...props}>
-        <div className="h-1/2 overflow-hidden">
+        <div className="aspect-[90/66] overflow-hidden">
           <img
             src={image}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
