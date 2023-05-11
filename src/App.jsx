@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Result } from './challenges';
+import { InteractiveCardDetails, Result } from './challenges';
 import { Home } from './pages/Home';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/result" element={<Result />} />
+      <Route path="/card" element={<InteractiveCardDetails />} />
     </Routes>
   );
 }

@@ -1,17 +1,26 @@
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import coming from '../assets/coming-soon.jpg';
 
 const Card = ({
-  image,
-  name = 'Challenge',
+  image = coming,
+  name = 'Coming Soon',
   html = true,
   css = true,
-  js = true,
-  link = '/',
-  description = 'Description',
+  js = false,
+  link = null,
+  description = 'Coming Soon',
 }) => {
+  const Wrapper = link ? Link : Fragment;
+  const props = link ? { to: link, target: '_blank' } : {};
+
   return (
-    <div className=" w-[372px] border rounded-t-xl overflow-hidden cursor-pointer">
-      <Link to={link} target="_blank">
+    <div
+      className={`border rounded-t-xl overflow-hidden ${
+        link ? 'cursor-pointer' : ''.trim()
+      }`}
+    >
+      <Wrapper {...props}>
         <div className="h-1/2 overflow-hidden">
           <img
             src={image}
@@ -36,7 +45,7 @@ const Card = ({
           </div>
           <p className="text-[#737373]">{description}</p>
         </div>
-      </Link>
+      </Wrapper>
     </div>
   );
 };

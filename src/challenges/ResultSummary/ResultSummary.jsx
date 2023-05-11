@@ -88,7 +88,7 @@ const ResultSummary = ({ result = 0, percentage = 100 }) => {
 const Result = () => {
   return (
     <div className="fullpage-centered">
-      <ResultSummary percentage={75} result={10} />
+      <ResultSummary percentage={65} result={76} />
     </div>
   );
 };
