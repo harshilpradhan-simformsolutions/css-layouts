@@ -1,5 +1,6 @@
 import result from './ResultSummary/desktop-preview.jpg';
 import card from './InteractiveCardDetails/desktop-preview.jpg';
+import news from './NewsPage/desktop-preview.jpg';
 
 export const challenges = [
   {
@@ -21,6 +22,12 @@ export const challenges = [
   },
   {
     id: 3,
+    name: 'News Homepage',
+    description:
+      'This news homepage will be an excellent opportunity to practice your CSS Grid skills. There will be lots of tricky decisions to make and plenty of learning opportunities!',
+    link: '/news',
+    image: news,
+    responsive: true,
   },
   {
     id: 4,

@@ -8,6 +8,7 @@ const Card = ({
   html = true,
   css = true,
   js = false,
+  responsive = false,
   link = null,
   description = 'Coming Soon',
 }) => {
@@ -24,7 +25,9 @@ const Card = ({
         <div className="aspect-[90/66] overflow-hidden">
           <img
             src={image}
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            className={`w-full h-full object-cover ${
+              link ? 'transition-transform duration-300 hover:scale-105' : ''
+            }`}
             alt="Image"
           />
         </div>
@@ -41,6 +44,11 @@ const Card = ({
             )}
             {js && (
               <span className="px-1 font-bold text-md text-[#FF3784]">JS</span>
+            )}
+            {responsive && (
+              <span className="px-1 font-bold text-md text-orange-600">
+                RESPONSIVE
+              </span>
             )}
           </div>
           <p className="text-[#737373]">{description}</p>
