@@ -4,11 +4,24 @@ import { ReactComponent as MenuIcon } from './icon-menu.svg';
 import imgMobile from './image-web-3-mobile.jpg';
 import retroPC from './image-retro-pcs.jpg';
 
-const MobileHeader = () => {
+const NavItem = ({ children }) => {
+  return <li className="text-[#9797ae] tracking-wider">{children}</li>;
+};
+
+const Header = () => {
   return (
     <div className="flex justify-between items-center">
       <Logo />
-      <MenuIcon />
+      <div className="md:hidden">
+        <MenuIcon />
+      </div>
+      <ul className="hidden md:flex gap-10">
+        <NavItem>Test</NavItem>
+        <NavItem>Test</NavItem>
+        <NavItem>Test</NavItem>
+        <NavItem>Test</NavItem>
+        <NavItem>Test</NavItem>
+      </ul>
     </div>
   );
 };
@@ -47,8 +60,8 @@ const NewsItem = ({ count, title, children, img }) => {
 
 const NewsPage = () => {
   return (
-    <div className="bg-[#fefdfa] p-4">
-      <MobileHeader />
+    <div className="bg-[#fefdfa] p-4 md:p-16">
+      <Header />
       <div className="mt-10 grid grid-cols-1 gap-4">
         <img src={imgMobile} />
         <h1 className="text-[3.5rem] font-bold" style={{ lineHeight: 1 }}>
@@ -80,14 +93,14 @@ const NewsPage = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 my-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-8">
         <NewsItem count="01" title="Reviving Retro PCs" img={retroPC}>
           What happens when old PCs are given modern upgrades.
         </NewsItem>
-        <NewsItem count="01" title="Reviving Retro PCs" img={retroPC}>
+        <NewsItem count="02" title="Reviving Retro PCs" img={retroPC}>
           What happens when old PCs are given modern upgrades.
         </NewsItem>
-        <NewsItem count="01" title="Reviving Retro PCs" img={retroPC}>
+        <NewsItem count="03" title="Reviving Retro PCs" img={retroPC}>
           What happens when old PCs are given modern upgrades.
         </NewsItem>
       </div>
